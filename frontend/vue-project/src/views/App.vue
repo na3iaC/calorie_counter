@@ -1,6 +1,6 @@
 <template>
 
-<router-link to="/">home</router-link>
+<router-link to="/">Search</router-link>
 <router-view />
 
 </template>
