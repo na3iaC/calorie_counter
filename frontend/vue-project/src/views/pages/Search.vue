@@ -6,7 +6,7 @@
             <input type="text" v-model="searchInput" placeholder="Enter search text">
             <button type="submit" class="search-button" aria-label="Search"><i class="bi bi-search"></i></button>
         </form>
-        <em v-if="loading">Loading users...</em>
+        <em v-if="loading">Loading items...</em>
         <div>
             <ul v-if="foods.length">
             <li v-for="food in foods" :key="food.food_id">
