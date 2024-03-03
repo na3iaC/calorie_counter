@@ -8,7 +8,9 @@ const search = (searchQuery) => {
             }
         })
         .then((resJson) => {
+            console.log(resJson)
             return resJson;
+            
         })
         .catch((err) => {
             console.log("Err", err);

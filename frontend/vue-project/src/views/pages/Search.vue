@@ -12,7 +12,7 @@
             <li v-for="food in foods" :key="food.food_id">
                 <div class="food-container">
                     <router-link :to="'/food/' + food.food_id" class="food-link">
-                    {{ food.foodname }}
+                    {{ food.FoodItem }}
                 </router-link>
 
 

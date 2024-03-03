@@ -13,7 +13,7 @@ const getSingleFood = (req, res) => {
             return res.status(404).json({ message: 'Food not found' });
         }
         console.log("Found foods:", foods);
-        return res.status(200).json({ foods });
+        return res.status(200).json( foods );
     });
 };
 
