@@ -3,9 +3,9 @@
         <h1>Search</h1>
         <div class="search-main">
             <form @submit.prevent="searchFoods" class="search-form">
-            <input type="text" v-model="searchInput" placeholder="Enter search text">
-            <button type="submit" class="search-button" aria-label="Search"><i class="bi bi-search"></i></button>
-        </form>
+        <input type="text" v-model="searchInput" placeholder="Enter search text">
+        <button type="submit" class="search-button" aria-label="Search"><i class="bi bi-search"></i></button>
+    </form>
         <em v-if="loading">Loading items...</em>
         <div>
             <ul v-if="foods.length">
@@ -45,17 +45,17 @@ export default {
     },
     methods: {
         searchFoods() {
-            this.loading = true;
-            foodService.search(this.searchInput)
-                .then(foods => {
-                    this.foods = foods;
-                    this.loading = false;
-                })
-                .catch(error => {
-                    this.error = error;
-                    this.loading = false;
-                });
-        }
+        this.loading = true;
+        foodService.search(this.searchInput)
+            .then(foods => {
+                this.foods = foods;
+                this.loading = false;
+            })
+            .catch(error => {
+                this.error = error;
+                this.loading = false;
+            });
+    }
     }
 }
 </script>
