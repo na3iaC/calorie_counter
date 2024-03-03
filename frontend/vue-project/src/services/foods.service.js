@@ -1,6 +1,6 @@
 const search = () =>{
 
-    return fetch(`http://localhost:3333/search`)
+    return fetch(`http://localhost:3333/food/search`)
     .then((response)=>{
         if(response.status === 200){
             return response.json();

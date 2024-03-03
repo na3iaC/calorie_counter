@@ -1,6 +1,6 @@
 const sqlite3 = require('sqlite3').verbose();
 
-const DBSOURCE = 'calorie_counter.db';
+const DBSOURCE = 'calorie_counter.sqlite';
 
 let db = new sqlite3.Database(DBSOURCE, (err) => {
     if (err) {

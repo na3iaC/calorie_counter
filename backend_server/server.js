@@ -20,10 +20,10 @@ app.get('/', (req, res, next) => {
     res.json({ 'status': 'Alive' });
 });
 
-const calorieRoutes = require('./app/routes/calorie.routes');
-app.use('/api/calories', calorieRoutes);
+//const calorieRoutes = require('./app/routes/calorie.routes');
+//app.use('/api/calories', calorieRoutes);
 
-
+require('./app/routes/calorie.routes')(app);
 app.use((req, res) => {
     res.sendStatus(404);
 });
