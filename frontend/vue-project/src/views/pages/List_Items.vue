@@ -128,31 +128,6 @@ export default {
   align-items: center;
 }
 
-.rectangle1 {
-  position: relative;
-  width: 500px;
-  height: 400px;
-  /* border-radius: 4px; */
-  background-color: #51b3c7;
-  margin-top: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.rectangle2 {
-  width: 400px;
-  height: 300px;
-  border-radius: 4px;
-  background-color: #a1a1a1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
 .add-food {
   background-color: #000;
   color: #fff;
@@ -163,17 +138,5 @@ export default {
   cursor: pointer;
   margin-top: 5px;
   margin-left: 480px;
-}
-.cal-calories {
-  position: relative;
-  width: 1000px; /* Match the width of the search button */
-  height: 30px; /* Match the height of the search button */
-  border-radius: 4px;
-  background-color: #000000; /* Adjust background color as needed */
-  color: #ffffff;
-  margin-top: 10px; /* Adjust margin between input and rectangle */
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 </style>
