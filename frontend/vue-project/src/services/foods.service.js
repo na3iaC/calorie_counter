@@ -1,5 +1,5 @@
-const foodService = {
-  search: (searchQuery) => {
+const search = (searchQuery) => {
+
     return fetch(`http://localhost:3333/food/search?q=${searchQuery}`)
       .then((response) => {
         if (response.status === 200) {
@@ -15,7 +15,10 @@ const foodService = {
         console.log("Err", err);
         throw err;
       });
-  },
+  
 };
 
-export default foodService;
+export const foodService = {
+  search,
+
+}

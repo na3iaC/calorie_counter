@@ -1,53 +1,54 @@
 <template>
-  <div class="search-page">
-    <!-- <h1>Search</h1> -->
-    <div class="search-main">
-      <form @submit.prevent="searchFoods" class="search-form">
-        <input
-          type="text"
-          v-model="searchInput"
-          placeholder="Enter search text"
-        />
-        <button type="submit" class="search-button" aria-label="Search">
-          <i class="bi bi-search"></i>
-        </button>
-      </form>
-
-      <div class="container">
-        <em v-if="loading">Loading items...</em>
-        <div>
-          <ul v-if="foods.length">
-            <li v-for="food in foods" :key="food.food_id">
-              <div class="food-container">
-                <router-link :to="'/food/' + food.food_id" class="food-link">
-                  {{ food.FoodItem }}
-                </router-link>
-              </div>
+  <section class="vh-100 bg-success bg-opacity-25">
+    <div class="container-fluid">
+      <div class="row justify-content-center align-items-center h-100">
+        <div class="col-md-12">
+ 
+          <div class="mb-4">
+            <img src="/images/Picture2.jpg" class="img-fluid" alt="Banner Image">
+          </div>
+         
+          <!-- Search Form -->
+          <form @submit.prevent="searchFoods" class="position-absolute top-50 start-50 translate-middle" style="z-index: 1; margin-top: 220px;">
+            <div class="input-group">
+              <input
+                type="text"
+                v-model="searchInput"
+                class="form-control"
+                placeholder="Enter search text"
+              />
+              <button type="submit" class="btn btn-primary">
+                <i class="bi bi-search"></i>
+              </button>
+            </div>
+          </form>
+ 
+          <!-- Loading indicator -->
+          <p v-if="loading" class="text-muted">Loading items...</p>
+ 
+          <!-- Food Items -->
+          <ul v-if="foods.length" class="list-group">
+            <li v-for="food in foods" :key="food.food_id" class="list-group-item">
+              <router-link :to="'/food/' + food.food_id" class="text-decoration-none">
+                {{ food.FoodItem }}
+              </router-link>
             </li>
           </ul>
-          <!-- <div class="rectangle">Your Food</div>
-          <div class="rectangle1">
-            <div class="rectangle2"></div>
-            -------
-          </div> -->
-          <!-- <button type="submit" class="add-food">Add Food</button> -->
+ 
+          <!-- Error message -->
+          <div v-if="error" class="alert alert-danger mt-3">{{ error }}</div>
         </div>
-        <div v-if="error" class="error-message">{{ error }}</div>
-        <!-- <button type="submit" class="cal-calories">
-          Calculate your calories today
-        </button> -->
       </div>
     </div>
-  </div>
+  </section>
 </template>
-
+ 
 <script>
-import foodService from "@/services/foods.service";
+import { foodService } from "../../services/foods.service";                  
 export default {
   data() {
     return {
       foods: [],
-      filteredFoods: [],
       error: "",
       loading: false,
       searchInput: "",
@@ -70,43 +71,24 @@ export default {
   },
 };
 </script>
-
+ 
 <style scoped>
-.search-main {
-  display: flex;
-  flex-direction: column; /* Stack elements vertically */
-  align-items: center; /* Center items horizontally */
+.input-group {
+  margin-bottom: 20px; /* Add margin below the search form */
 }
-
-.search-form {
-  display: flex;
-  width: 100%; /* Full width */
-  max-width: 1000px; /* Maximum width for the form */
-  margin-top: 20px; /* Adjust margin as needed */
+ 
+.input-group input[type="text"] {
+  border-top-right-radius: 0; /* Remove border-radius from input in the input-group */
+  border-bottom-right-radius: 0;
 }
-
-.search-form input[type="text"] {
-  flex: 1; /* Grow to fill available space */
-  padding: 10px; /* Adjust padding as needed */
-  border: 1px solid #ccc; /* Add border for visual separation */
-  border-radius: 4px; /* Add border radius for rounded corners */
-  background-color: #a1a1a1; /* Change background color as needed */
-  margin-right: 10px; /* Adjust margin between input and button */
+ 
+.input-group button {
+  border-top-left-radius: 0; /* Remove border-radius from button in the input-group */
+  border-bottom-left-radius: 0;
 }
-
-.search-form input[type="text"]::placeholder {
-  color: #000000; /* Change the color to your desired value */
-}
-
-.search-button {
-  padding: 10px; /* Adjust padding as needed */
-  border: 1px solid #ccc; /* Add border for visual consistency */
-  border-radius: 4px; /* Add border radius for rounded corners */
-  background-color: #a1a1a1; /* Change background color as needed */
-  cursor: pointer;
-}
-
-.search-button i {
-  font-size: 1.2rem; /* Adjust icon size as needed */
+ 
+.list-group-item {
+  cursor: pointer; /* Change cursor to pointer for list items */
 }
 </style>
+ 
