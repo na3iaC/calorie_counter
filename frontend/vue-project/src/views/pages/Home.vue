@@ -3,14 +3,21 @@
     <img src="/images/Log2.jpg" alt="Logo" class="logo-img" />
     <!-- <h1>Calorie counter</h1> -->
     <h2>Do you want to know many calories you had today?</h2>
-    <button type="submit" class="start">Click here to start</button>
+    <button @click="navigateToListItems" class="start">
+      Click here to start
+    </button>
     <h3>Eat healthy, live healthy, enjoy your life!</h3>
   </div>
 </template>
 
 <script>
 export default {
-  // Component logic...
+  methods: {
+    navigateToListItems() {
+      // Use Vue Router's $router.push() method to navigate to the List_Items route
+      this.$router.push("/list-items");
+    },
+  },
 };
 </script>
 
