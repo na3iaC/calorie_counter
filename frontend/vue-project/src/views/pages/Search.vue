@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="search-page">
     <!-- <h1>Search</h1> -->
     <div class="search-main">
       <form @submit.prevent="searchFoods" class="search-form">
@@ -42,7 +42,7 @@
 </template>
 
 <script>
-import { foodService } from "../../services/foods.service";
+import foodService from "@/services/foods.service";
 export default {
   data() {
     return {

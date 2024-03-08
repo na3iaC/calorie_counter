@@ -1,18 +1,19 @@
 <template>
-  <nav class="navbar">
-    <div class="navbar-left">
-      <img src="/images/Log2.jpg" alt="Logo" class="logo-img" />
-      <h1>Calorie counter</h1>
-    </div>
-    <div class="navbar-right">
-      <router-link to="/">Search</router-link>
-      <router-link to="/home">Home</router-link>
-      <router-link to="/about">About us</router-link>
-      <router-link to="/contact">Contact</router-link>
-      <router-link to="/Lists">List Item</router-link>
-    </div>
-  </nav>
-
+  <div id="app">
+    <nav class="navbar">
+      <div class="navbar-left">
+        <img src="/images/Log2.jpg" alt="Logo" class="logo-img" />
+        <h1>Calorie counter</h1>
+      </div>
+      <div class="navbar-right">
+        <router-link to="/home">Home</router-link>
+        <router-link to="/">Search</router-link>
+        <router-link to="/list-items">List Items</router-link>
+        <!-- <router-link to="/about">About us</router-link>
+        <router-link to="/contact">Contact</router-link> -->
+      </div>
+    </nav>
+  </div>
   <router-view />
 </template>
 <script></script>
