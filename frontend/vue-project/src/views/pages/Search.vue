@@ -28,8 +28,8 @@
  
           <!-- Food Items -->
           <ul v-if="foods.length" class="list-group">
-            <li v-for="food in foods" :key="food.food_id" class="list-group-item">
-              <router-link :to="'/food/' + food.food_id" class="text-decoration-none">
+            <li v-for="food in foods" :key="food.id" class="list-group-item">
+              <router-link :to="'/food/' + food.id" class="text-decoration-none">
                 {{ food.FoodItem }}
               </router-link>
             </li>
