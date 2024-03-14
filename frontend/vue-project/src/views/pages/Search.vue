@@ -3,13 +3,20 @@
     <div class="container-fluid">
       <div class="row justify-content-center align-items-center h-100">
         <div class="col-md-12">
- 
           <div class="mb-4">
-            <img src="/images/Picture2.jpg" class="img-fluid" alt="Banner Image">
+            <img
+              src="/images/Picture2.jpg"
+              class="img-fluid"
+              alt="Banner Image"
+            />
           </div>
-         
+
           <!-- Search Form -->
-          <form @submit.prevent="searchFoods" class="position-absolute top-50 start-50 translate-middle" style="z-index: 1; margin-top: 220px;">
+          <form
+            @submit.prevent="searchFoods"
+            class="position-absolute top-50 start-50 translate-middle"
+            style="z-index: 1; margin-top: 220px"
+          >
             <div class="input-group">
               <input
                 type="text"
@@ -22,19 +29,40 @@
               </button>
             </div>
           </form>
- 
+
           <!-- Loading indicator -->
           <p v-if="loading" class="text-muted">Loading items...</p>
- 
+
           <!-- Food Items -->
           <ul v-if="foods.length" class="list-group">
-            <li v-for="food in foods" :key="food.food_id" class="list-group-item">
-              <router-link :to="'/food/' + food.food_id" class="text-decoration-none">
+            <li v-for="food in foods" :key="food.id" class="list-group-item">
+              <router-link
+                :to="'/food/' + food.id"
+                class="text-decoration-none"
+              >
                 {{ food.FoodItem }}
               </router-link>
             </li>
+            <li v-if="selectedFood" class="list-group-item">
+              {{ selectedFood.foodItem }}
+            </li>
           </ul>
- 
+          <!-- Display selected foods -->
+          <ul class="list-group">
+            <li
+              v-for="selectedFood in selectedFoods"
+              :key="selectedFood.foodId"
+              class="list-group-item"
+            >
+              <div class="d-flex justify-content-between align-items-center">
+                <span>{{ selectedFood.foodItem }}</span>
+                <button @click="deleteItem(index)" class="btn btn-danger">
+                  Delete
+                </button>
+              </div>
+            </li>
+          </ul>
+
           <!-- Error message -->
           <div v-if="error" class="alert alert-danger mt-3">{{ error }}</div>
         </div>
@@ -42,18 +70,29 @@
     </div>
   </section>
 </template>
- 
+
 <script>
-import { foodService } from "../../services/foods.service";                  
+import { foodService } from "../../services/foods.service";
 export default {
   data() {
     return {
+      // Initialize selectedFood from route parameter or localStorage
+      selectedFoods: [], // Initialize selectedFoods array
       foods: [],
       error: "",
       loading: false,
       searchInput: "",
+      selectedFood: null, //variable to store selected food item
     };
   },
+  mounted() {
+    // Retrieve selected foods from localStorage
+    const selectedFoodsJSON = localStorage.getItem("selectedFoods");
+    if (selectedFoodsJSON) {
+      this.selectedFoods = JSON.parse(selectedFoodsJSON);
+    }
+  },
+
   methods: {
     searchFoods() {
       this.loading = true;
@@ -68,27 +107,32 @@ export default {
           this.loading = false;
         });
     },
+    deleteItem(index) {
+      // Remove the selected item from the list
+      this.selectedFoods.splice(index, 1);
+      // Update localStorage
+      localStorage.setItem("selectedFoods", JSON.stringify(this.selectedFoods));
+    },
   },
 };
 </script>
- 
+
 <style scoped>
 .input-group {
   margin-bottom: 20px; /* Add margin below the search form */
 }
- 
+
 .input-group input[type="text"] {
   border-top-right-radius: 0; /* Remove border-radius from input in the input-group */
   border-bottom-right-radius: 0;
 }
- 
+
 .input-group button {
   border-top-left-radius: 0; /* Remove border-radius from button in the input-group */
   border-bottom-left-radius: 0;
 }
- 
+
 .list-group-item {
   cursor: pointer; /* Change cursor to pointer for list items */
 }
 </style>
- 
