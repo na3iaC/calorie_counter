@@ -18,10 +18,10 @@
                                         Delete
                                     </button>
                                     <button @click="increaseQuantity(index)" class="btn btn-primary">
-                                        Increase Quantity
+                                        +
                                     </button>
                                     <button @click="decreaseQuantity(index)" class="btn btn-primary">
-                                        Decrease Quantity
+                                        -
                                     </button>
                                 </div>
                             </div>
