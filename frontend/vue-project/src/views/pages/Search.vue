@@ -68,6 +68,7 @@ export default {
       searchInput: "",
       //selectedFood: null, //variable to store selected food item
     };
+    //helolololo
   },
   // mounted() {
   //   // Retrieve selected foods from localStorage
