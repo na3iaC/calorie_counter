@@ -20,6 +20,9 @@
                                     <button @click="increaseQuantity(index)" class="btn btn-primary">
                                         Increase Quantity
                                     </button>
+                                    <button @click="decreaseQuantity(index)" class="btn btn-primary">
+                                        Decrease Quantity
+                                    </button>
                                 </div>
                             </div>
                         </li>
@@ -61,9 +64,15 @@ export default {
         
             localStorage.setItem("selectedFoods", JSON.stringify(this.selectedFoods));
         },
+        decreaseQuantity(index) {
+      
+      this.selectedFoods[index].quantity--;
+  
+      localStorage.setItem("selectedFoods", JSON.stringify(this.selectedFoods));
+  },
         calculateCalories(selectedFood) {     const cals = parseInt(selectedFood.calsPer100Grams.split(" ")[0]);
             
-            return cals * selectedFood.quantity;
+            return cals;
         },
         calculateTotalCalories() {
            

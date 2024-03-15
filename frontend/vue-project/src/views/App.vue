@@ -14,17 +14,15 @@
         <li class="nav-item">
           <router-link to="/home" class="nav-link">Home</router-link>
         </li>
-        <!-- <li class="nav-item">
+        <li class="nav-item">
           <router-link to="/about" class="nav-link">About us</router-link>
         </li>
         <li class="nav-item">
           <router-link to="/contact" class="nav-link">Contact</router-link>
-        </li> -->
-        <!---------remove later ---------->
+        </li>
         <li class="nav-item">
           <router-link to="/list" class="nav-link">List</router-link>
         </li>
-        <!---------remove later ---------->
       </ul>
     </div>
   </nav>

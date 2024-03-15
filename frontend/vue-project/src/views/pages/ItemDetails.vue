@@ -74,6 +74,9 @@ export default {
 
       // Store selectedFoods array in localStorage
       localStorage.setItem("selectedFoods", JSON.stringify(selectedFoods));
+     
+     this.$router.push("/list")
+
     console.log(selectedFoods)
     },
   },
