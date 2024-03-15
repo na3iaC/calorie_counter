@@ -22,9 +22,7 @@
         </li> -->
         <!---------remove later ---------->
         <li class="nav-item">
-          <router-link to="/ItemDetails" class="nav-link"
-            >Details Item</router-link
-          >
+          <router-link to="/list" class="nav-link">List</router-link>
         </li>
         <!---------remove later ---------->
       </ul>

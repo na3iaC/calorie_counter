@@ -1,7 +1,6 @@
 <template>
   <div>
     <h1>Items Page</h1>
-    <!-- Add your list items content here -->
 
     <div class="container">
       <div class="rectangle">Your Food</div>
@@ -19,7 +18,7 @@
 export default {
   methods: {
     navigateToListItems() {
-      // Use Vue Router's $router.push() method to navigate to the List_Items route
+     
       this.$router.push("/");
     },
   },
@@ -27,21 +26,20 @@ export default {
 </script>
 
 <style scoped>
-/* Component styles... */
 
 .container {
   display: flex;
-  flex-direction: column; /* Stack elements vertically */
-  align-items: center; /* Center items horizontally */
-  margin-top: 5px; /* Adjust margin as needed */
+  flex-direction: column; 
+  align-items: center; 
+  margin-top: 5px; 
 }
 .rectangle {
   position: relative;
-  width: 500px; /* Match the width of the search button */
-  height: 40px; /* Match the height of the search button */
-  /* border-radius: 4px; */
-  background-color: #a1a1a1; /* Adjust background color as needed */
-  margin-top: 20px; /* Adjust margin between input and rectangle */
+  width: 500px; 
+  height: 40px; 
+ 
+  background-color: #a1a1a1;
+  margin-top: 20px; 
   display: flex;
   justify-content: center;
   align-items: center;
@@ -51,7 +49,7 @@ export default {
   position: relative;
   width: 500px;
   height: 400px;
-  /* border-radius: 4px; */
+  
   background-color: #51b3c7;
   margin-top: 20px;
   display: flex;
@@ -85,12 +83,12 @@ export default {
 }
 .cal-calories {
   position: relative;
-  width: 1000px; /* Match the width of the search button */
-  height: 30px; /* Match the height of the search button */
+  width: 1000px; 
+  height: 30px; 
   border-radius: 4px;
-  background-color: #000000; /* Adjust background color as needed */
+  background-color: #000000; 
   color: #ffffff;
-  margin-top: 10px; /* Adjust margin between input and rectangle */
+  margin-top: 10px; 
   display: flex;
   justify-content: center;
   align-items: center;

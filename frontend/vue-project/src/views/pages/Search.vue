@@ -43,25 +43,9 @@
                 {{ food.FoodItem }}
               </router-link>
             </li>
-            <li v-if="selectedFood" class="list-group-item">
-              {{ selectedFood.foodItem }}
-            </li>
+           
           </ul>
-          <!-- Display selected foods -->
-          <ul class="list-group">
-            <li
-              v-for="selectedFood in selectedFoods"
-              :key="selectedFood.foodId"
-              class="list-group-item"
-            >
-              <div class="d-flex justify-content-between align-items-center">
-                <span>{{ selectedFood.foodItem }}</span>
-                <button @click="deleteItem(index)" class="btn btn-danger">
-                  Delete
-                </button>
-              </div>
-            </li>
-          </ul>
+         
 
           <!-- Error message -->
           <div v-if="error" class="alert alert-danger mt-3">{{ error }}</div>
@@ -77,21 +61,21 @@ export default {
   data() {
     return {
       // Initialize selectedFood from route parameter or localStorage
-      selectedFoods: [], // Initialize selectedFoods array
+     // selectedFoods: [], // Initialize selectedFoods array
       foods: [],
       error: "",
       loading: false,
       searchInput: "",
-      selectedFood: null, //variable to store selected food item
+      //selectedFood: null, //variable to store selected food item
     };
   },
-  mounted() {
-    // Retrieve selected foods from localStorage
-    const selectedFoodsJSON = localStorage.getItem("selectedFoods");
-    if (selectedFoodsJSON) {
-      this.selectedFoods = JSON.parse(selectedFoodsJSON);
-    }
-  },
+  // mounted() {
+  //   // Retrieve selected foods from localStorage
+  //   const selectedFoodsJSON = localStorage.getItem("selectedFoods");
+  //   if (selectedFoodsJSON) {
+  //     this.selectedFoods = JSON.parse(selectedFoodsJSON);
+  //   }
+  // },
 
   methods: {
     searchFoods() {
@@ -107,12 +91,12 @@ export default {
           this.loading = false;
         });
     },
-    deleteItem(index) {
-      // Remove the selected item from the list
-      this.selectedFoods.splice(index, 1);
-      // Update localStorage
-      localStorage.setItem("selectedFoods", JSON.stringify(this.selectedFoods));
-    },
+    // deleteItem(index) {
+    //   // Remove the selected item from the list
+    //   this.selectedFoods.splice(index, 1);
+    //   // Update localStorage
+    //   localStorage.setItem("selectedFoods", JSON.stringify(this.selectedFoods));
+    // },
   },
 };
 </script>

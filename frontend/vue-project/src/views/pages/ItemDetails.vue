@@ -63,6 +63,7 @@ export default {
         per100Grams: this.per100Grams,
         calsPer100Grams: this.calsPer100Grams,
         kjPer100Grams: this.kjPer100Grams,
+        quantity: 1
       };
       // Retrieve existing selected foods from localStorage or initialize as empty array
       let selectedFoods =
@@ -73,6 +74,7 @@ export default {
 
       // Store selectedFoods array in localStorage
       localStorage.setItem("selectedFoods", JSON.stringify(selectedFoods));
+    console.log(selectedFoods)
     },
   },
 };
