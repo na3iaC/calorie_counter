@@ -1,19 +1,29 @@
 <template>
-  <div class="container">
-    <h1>Item details</h1>
+  <section class="full-screen-bg bg-success bg-opacity-25"  style="padding-top: 50px;">
+    <div class="container-fluid d-flex justify-content-center align-items-center h-100">
+  <div class="card" style="width: 80rem; margin-top: 50px; margin-right: 80px;">
+    <div class="card-header fw-bold">
+    Item details
+  </div>
+  <ul class="list-group list-group-flush">
     <div v-if="loading">Loading...</div>
     <div v-else>
-      <p>Food Category: {{ foodCategory }}</p>
-      <p>Food Item: {{ foodItem }}</p>
-      <p>Per 100 Grams: {{ per100Grams }}</p>
-      <p>Calories per 100 Grams: {{ calsPer100Grams }}</p>
-      <p>KJ per 100 Grams: {{ kjPer100Grams }}</p>
+      <li class="list-group-item">Food Category: {{ foodCategory }}</li>
+      <li class="list-group-item">Food Item: {{ foodItem }}</li>
+      <li class="list-group-item">Per 100 Grams: {{ per100Grams }}</li>
+      <li class="list-group-item">Calories per 100 Grams: {{ calsPer100Grams }}</li>
+      <li class="list-group-item">KJ per 100 Grams: {{ kjPer100Grams }}</li>
       <p v-if="error" class="error">{{ error }}</p>
-      <button type="submit" @click="addItemToCart">Add</button>
-      <!-- Bind click event to method -->
+    
     </div>
+     </ul>
+       <button type="submit" @click="addItemToCart" class="btn btn-outline-success"><i class="bi bi-basket"></i></button>
+      <!-- Bind click event to method -->
   </div>
+</div>
+  </section>
 </template>
+
 
 <script>
 import { foodService } from "../../services/foods.service";

@@ -12,23 +12,27 @@
                         >
                             <div class="d-flex justify-content-between align-items-center">
                                 <span>{{ selectedFood.foodItem }} - Quantity: {{ selectedFood.quantity }}</span>
+                                <button @click="increaseQuantity(index)" class="btn btn-outline-secondary-sm">
+                                        <i class="bi bi-plus-circle"></i>
+                                    </button>
+                                    <button @click="decreaseQuantity(index)" class="btn btn-outline-secondary-sm" style="margin-left: -400px;">
+                                        <i class="bi bi-dash-circle"></i>
+                                    </button>
                                 <span>Calories: {{ calculateCalories(selectedFood) }}</span>
                                 <div>
-                                    <button @click="deleteItem(index)" class="btn btn-danger me-2">
-                                        Delete
-                                    </button>
-                                    <button @click="increaseQuantity(index)" class="btn btn-primary">
-                                        +
-                                    </button>
-                                    <button @click="decreaseQuantity(index)" class="btn btn-primary">
-                                        -
+                                    <button @click="deleteItem(index)" class="btn btn-outline-danger-sm me-2">
+                                        <i class="bi bi-trash"></i>
                                     </button>
                                 </div>
                             </div>
                         </li>
                     </ul>
-                    <div v-if="selectedFoods.length" class="total-calories">
-                        Total Calories: {{ calculateTotalCalories() }}
+                    <div v-if="selectedFoods.length" class="total-calories d-flex justify-content-end mt-3">
+                        
+                        Total Calories:
+                        <br>
+                         <span class=" border border-dark rounded-circle" style="font-size: 3.5rem; padding: 2rem;">{{ calculateTotalCalories() }}
+                        </span>
                     </div>
                 </div>
             </div>
@@ -91,4 +95,7 @@ export default {
     margin-top: 10px;
     font-weight: bold;
 }
+  .custom-btn {
+        margin-right: -10px; /* Adjust the margin as needed */
+    }
 </style>

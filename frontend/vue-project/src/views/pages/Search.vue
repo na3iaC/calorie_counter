@@ -8,14 +8,15 @@
               src="/images/Picture2.jpg"
               class="img-fluid"
               alt="Banner Image"
+              style="opacity: 0.75;"
             />
           </div>
 
           <!-- Search Form -->
           <form
             @submit.prevent="searchFoods"
-            class="position-absolute top-50 start-50 translate-middle"
-            style="z-index: 1; margin-top: 220px"
+            class="d-flex justify-content-center"
+            
           >
             <div class="input-group">
               <input
@@ -24,7 +25,7 @@
                 class="form-control"
                 placeholder="Enter search text"
               />
-              <button type="submit" class="btn btn-primary">
+              <button type="submit" class="btn btn-outline-success">
                 <i class="bi bi-search"></i>
               </button>
             </div>

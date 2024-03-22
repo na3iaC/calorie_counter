@@ -1,5 +1,5 @@
 <template>
-  <section class="vh-100 bg-success bg-opacity-25">
+  <section class="full-screen-bg bg-success bg-opacity-25">
   <!-- input an image-->
 <div class="container-fluid h-custom">
   <div class="row d-flex justify-content-center align-items-center h-100">
@@ -34,3 +34,10 @@
 
 </section>
   </template>
+
+<style>
+.full-screen-bg {
+  min-height: 100vh;
+  min-width: 100vw;
+}
+</style>
