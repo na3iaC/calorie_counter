@@ -29,10 +29,8 @@
                     </ul>
                     <div v-if="selectedFoods.length" class="total-calories d-flex justify-content-end mt-3">
                         
-                        Total Calories:
-                        <br>
-                         <span class=" border border-dark rounded-circle" style="font-size: 3.5rem; padding: 2rem;">{{ calculateTotalCalories() }}
-                        </span>
+                        Total Calories:{{ calculateTotalCalories() }}
+                        
                     </div>
                 </div>
             </div>
