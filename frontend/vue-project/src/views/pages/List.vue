@@ -37,7 +37,7 @@
                                     <div class="col">
                                 <span>Calories: {{ calculateCalories(selectedFood) }}</span>
                                 </div>
-                                <div class="col">
+                                <div class="col-auto">
                                     <button @click="deleteItem(index)" class="btn btn-danger-sm me-2">
                                         <i class="bi bi-trash"></i>
                                     </button>
