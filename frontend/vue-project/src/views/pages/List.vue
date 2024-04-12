@@ -46,7 +46,7 @@
                             </div>
                         </li>
                     </ul>
-                    <div v-if="selectedFoods.length" class="total-calories d-flex justify-content-end mt-3">
+                    <div v-if="selectedFoods.length" class="total-calories d-flex justify-content-end mt-3 fs-5">
                         <i class="bi bi-shop-window fs-5 me-2"></i>
                         Total Calories: {{ calculateTotalCalories() }}
                         
