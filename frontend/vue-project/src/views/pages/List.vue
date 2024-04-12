@@ -2,8 +2,18 @@
     <section class="vh-100 bg-success bg-opacity-25">
         <div class="container-fluid">
             <div class="row justify-content-center align-items-center h-100">
-                <div class="col-md-12">
-               
+                
+                <!-- <div class="col-md-12"> -->
+        <div class="col-md-12">
+          <div class="mb-4">
+            <img
+              src="/images/banner1.jpg"
+              class="img-fluid"
+              alt="Banner Image"
+              style="opacity: 0.75;"
+            />
+          </div>
+          
                     <ul v-if="selectedFoods.length" class="list-group">
                         <li
                             v-for="(selectedFood, index) in selectedFoods"
@@ -15,12 +25,12 @@
                                 <button @click="increaseQuantity(index)" class="btn btn-outline-secondary-sm">
                                         <i class="bi bi-plus-circle"></i>
                                     </button>
-                                    <button @click="decreaseQuantity(index)" class="btn btn-outline-secondary-sm" style="margin-left: -400px;">
+                                    <button @click="decreaseQuantity(index)" class="btn btn-secondary-sm" style="margin-left: -400px;">
                                         <i class="bi bi-dash-circle"></i>
                                     </button>
                                 <span>Calories: {{ calculateCalories(selectedFood) }}</span>
                                 <div>
-                                    <button @click="deleteItem(index)" class="btn btn-outline-danger-sm me-2">
+                                    <button @click="deleteItem(index)" class="btn btn-danger-sm me-2">
                                         <i class="bi bi-trash"></i>
                                     </button>
                                 </div>
@@ -28,8 +38,8 @@
                         </li>
                     </ul>
                     <div v-if="selectedFoods.length" class="total-calories d-flex justify-content-end mt-3">
-                        
-                        Total Calories:{{ calculateTotalCalories() }}
+                        <i class="bi bi-shop-window fs-5 me-2"></i>
+                        Total Calories: {{ calculateTotalCalories() }}
                         
                     </div>
                 </div>
@@ -67,10 +77,11 @@ export default {
             localStorage.setItem("selectedFoods", JSON.stringify(this.selectedFoods));
         },
         decreaseQuantity(index) {
-      
+            if (this.selectedFoods[index].quantity > 1) { // quantity cannot less than 1
       this.selectedFoods[index].quantity--;
   
       localStorage.setItem("selectedFoods", JSON.stringify(this.selectedFoods));
+      }
   },
         calculateCalories(selectedFood) {     const cals = parseInt(selectedFood.calsPer100Grams.split(" ")[0]);
             
@@ -94,6 +105,6 @@ export default {
     font-weight: bold;
 }
   .custom-btn {
-        margin-right: -10px; /* Adjust the margin as needed */
+    margin-right: 5px; /* Adjust the margin as needed */
     }
 </style>

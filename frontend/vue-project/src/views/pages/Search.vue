@@ -1,35 +1,33 @@
 <template>
   <section class="vh-100 bg-success bg-opacity-25">
     <div class="container-fluid">
-      <div class="row justify-content-center align-items-center h-100">
+      <div class="row justify-content-center align-items-end h-100">
         <div class="col-md-12">
-          <div class="mb-4">
+          <div class="mb-4 position-relative">
             <img
               src="/images/Picture2.jpg"
               class="img-fluid"
               alt="Banner Image"
               style="opacity: 0.75;"
             />
+            <!-- Search Form overlaid on the image with transparent background -->
+            <form
+              @submit.prevent="searchFoods"
+              class="position-absolute bottom-0 start-50 translate-middle-x"
+              style="z-index: 1; background-color: rgba(0, 0, 0, 0); width: 40%; " >
+              <div class="input-group">
+                <input
+                  type="text"
+                  v-model="searchInput"
+                  class="form-control"
+                  placeholder="Check before you eat for a healthier diet"
+                  style="background-color: rgba(255, 255, 255, 0.5); " />
+                <button type="submit" class="btn btn-outline-success">
+                  <i class="bi bi-search"></i>
+                </button>
+              </div>
+            </form>
           </div>
-
-          <!-- Search Form -->
-          <form
-            @submit.prevent="searchFoods"
-            class="d-flex justify-content-center"
-            
-          >
-            <div class="input-group">
-              <input
-                type="text"
-                v-model="searchInput"
-                class="form-control"
-                placeholder="Enter search text"
-              />
-              <button type="submit" class="btn btn-outline-success">
-                <i class="bi bi-search"></i>
-              </button>
-            </div>
-          </form>
 
           <!-- Loading indicator -->
           <p v-if="loading" class="text-muted">Loading items...</p>
@@ -120,5 +118,24 @@ export default {
 
 .list-group-item {
   cursor: pointer; /* Change cursor to pointer for list items */
+}
+.position-relative {
+  position: relative;
+}
+
+.position-absolute {
+  position: absolute;
+}
+
+.top-50 {
+  top: 50%;
+}
+
+.start-50 {
+  left: 50%;
+}
+
+.translate-middle {
+  transform: translate(-50%, -50%);
 }
 </style>

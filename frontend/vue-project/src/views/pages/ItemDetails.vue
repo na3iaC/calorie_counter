@@ -1,7 +1,18 @@
 <template>
-  <section class="full-screen-bg bg-success bg-opacity-25"  style="padding-top: 50px;">
+  <section class="full-screen-bg bg-success bg-opacity-25"  >
     <div class="container-fluid d-flex justify-content-center align-items-center h-100">
-  <div class="card" style="width: 80rem; margin-top: 50px; margin-right: 80px;">
+      <div class="row justify-content-center align-items-center h-100">
+        <div class="col-md-12">
+          <div class="mb-4">
+            <img
+              src="/images/banner1.jpg"
+              class="img-fluid"
+              alt="Banner Image"
+              style="opacity: 0.75;"
+            />
+          </div>
+  <!-- <div class="card" style="width: 80rem; margin-top: 50px; margin-right: 80px;"> -->
+    <div class="card mx-auto" style="max-width: 80rem;">
     <div class="card-header fw-bold">
     Item details
   </div>
@@ -17,9 +28,11 @@
     
     </div>
      </ul>
-       <button type="submit" @click="addItemToCart" class="btn btn-outline-success"><i class="bi bi-basket"></i></button>
+       <button type="submit" @click="addItemToCart" class="btn btn-outline-success">Add to <i class="bi bi-basket"></i></button>
       <!-- Bind click event to method -->
   </div>
+</div>
+</div>
 </div>
   </section>
 </template>
