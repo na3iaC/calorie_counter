@@ -20,19 +20,28 @@
                             :key="selectedFood.foodId"
                             class="list-group-item"
                         >
-                            <div class="d-flex justify-content-between align-items-center">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col">
+                                
                                 <span>{{ selectedFood.foodItem }} - Quantity: {{ selectedFood.quantity }}</span>
+                                </div>
+                                <div class="col">
                                 <button @click="increaseQuantity(index)" class="btn btn-outline-secondary-sm">
                                         <i class="bi bi-plus-circle"></i>
                                     </button>
-                                    <button @click="decreaseQuantity(index)" class="btn btn-secondary-sm" style="margin-left: -400px;">
+                                    <button @click="decreaseQuantity(index)" class="btn btn-secondary-sm">
                                         <i class="bi bi-dash-circle"></i>
                                     </button>
+                                    </div>
+                                    <div class="col">
                                 <span>Calories: {{ calculateCalories(selectedFood) }}</span>
-                                <div>
+                                </div>
+                                <div class="col">
                                     <button @click="deleteItem(index)" class="btn btn-danger-sm me-2">
                                         <i class="bi bi-trash"></i>
                                     </button>
+                                    </div>
                                 </div>
                             </div>
                         </li>
