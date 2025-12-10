@@ -193,7 +193,7 @@
     "safer-buffer": "^2.1.2",
     "semver": "^7.5.4",
     "send": "^0.18.0",
-    "serialize-javascript": "^6.0.0",
+    "serialize-javascript": "^6.0.2",
     "serve-static": "^1.15.0",
     "set-blocking": "^2.0.0",
     "set-function-length": "^1.1.1",
@@ -243,7 +243,7 @@
     "yocto-queue": "^0.1.0"
   },
   "devDependencies": {
-    "mocha": "^10.2.0"
+    "mocha": "^10.8.2"
   },
   "scripts": {
     "test": "mocha",
