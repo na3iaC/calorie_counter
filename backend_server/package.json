@@ -129,7 +129,7 @@
     "is-unicode-supported": "^0.1.0",
     "isexe": "^2.0.0",
     "joi": "^17.11.0",
-    "js-yaml": "^4.1.0",
+    "js-yaml": "^4.1.1",
     "locate-path": "^6.0.0",
     "log-symbols": "^4.1.0",
     "loupe": "^2.3.7",
