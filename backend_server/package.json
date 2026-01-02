@@ -180,7 +180,7 @@
     "promise-retry": "^2.0.1",
     "proxy-addr": "^2.0.7",
     "pstree.remy": "^1.1.8",
-    "qs": "^6.11.0",
+    "qs": "^6.14.1",
     "randombytes": "^2.1.0",
     "range-parser": "^1.2.1",
     "raw-body": "^2.5.2",
