@@ -142,7 +142,7 @@
     "mime": "^1.6.0",
     "mime-db": "^1.52.0",
     "mime-types": "^2.1.35",
-    "minimatch": "^5.0.1",
+    "minimatch": "^5.1.9",
     "minipass": "^3.3.6",
     "minipass-collect": "^1.0.2",
     "minipass-fetch": "^1.4.1",
