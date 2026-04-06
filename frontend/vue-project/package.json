@@ -16,7 +16,7 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.2.4",
-    "vite": "^7.2.7"
+    "vite": "^7.3.2"
   },
   "description": "This template should help get you started developing with Vue 3 in Vite.",
   "main": "vite.config.js",
