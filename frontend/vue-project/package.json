@@ -15,8 +15,8 @@
     "vue-router": "^4.3.0"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^5.2.4",
-    "vite": "^7.3.2"
+    "@vitejs/plugin-vue": "^6.0.7",
+    "vite": "^8.0.16"
   },
   "description": "This template should help get you started developing with Vue 3 in Vite.",
   "main": "vite.config.js",
